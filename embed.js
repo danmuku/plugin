@@ -14,10 +14,9 @@ if(urlLocation.charAt(urlLocation.length - 1) === '/'){
 }
 
 // create div
-var danmacoDiv=$('<div id="danmaco"><a id="click_screen">点击弹幕</a>\
-<div class="screen"><div class="s_dm"><a class="s_close">退出弹幕</a>\
-<div class="mask"></div><div class="s_show"></div></div>\
-<div class="send"><div class="s_con"><input type="text" class="s_txt"/>\
+var danmacoDiv=$('<div id="danmaco"><div class="screen"><div class="s_dm"><div class="mask"></div>\
+<div class="s_show"></div></div><div class="send">\
+<div class="s_con"><input type="text" class="s_txt"/>\
 <input type="button" class="s_btn" value="发表评论"/></div></div></div></div>');            
 danmacoDiv.appendTo('body');   
 
@@ -42,16 +41,6 @@ $.getScript("https://cdn.firebase.com/js/client/2.2.1/firebase.js", function(){
 });
 
 
-
-//点击展开
-$("#click_screen").click(function () {
-    $(".screen").toggle(600);
-
-});
-$(".s_close").click(function () {
-    $(".screen").toggle(600);
-
-});
 
 //发表评论
 $(".s_btn").click(function () {

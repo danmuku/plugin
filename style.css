@@ -3,22 +3,6 @@
     font-family: "微软雅黑";
 }
 
-/*screen start*/
-#click_screen {
-    width: 100px;
-    height: 40px;
-    display: block;
-    border: 0;
-    text-align: center;
-    line-height: 40px;
-    text-decoration: none;
-    font-size: 21px;
-    color: #fff;
-    font-family: "微软雅黑";
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
 
 .screen {
     width: 100%;
