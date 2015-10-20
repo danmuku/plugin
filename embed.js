@@ -22,6 +22,7 @@ var danmacoDiv=$('<div id="danmaco"><a id="click_screen">点击弹幕</a>\
 danmacoDiv.appendTo('body');   
 
 
+
 // load style
 $("<link>").attr({ rel: "stylesheet",type: "text/css",href: "https://danmako.sinaapp.com/style.css"}).appendTo("head");
 
@@ -61,6 +62,15 @@ $(".s_txt").keydown(function () {
     var code = window.event.keyCode;
     if (code == 13) {
         post();
+    }
+});
+
+$(document).keydown(function(event){
+	var keyCode = event.keyCode;
+	if (keyCode == 13) {
+        post();
+    }else if(keyCode == 27){
+    	$(".screen").toggle(600);
     }
 });
 
