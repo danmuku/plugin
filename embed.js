@@ -23,7 +23,7 @@ danmacoDiv.appendTo('body');
 
 
 // load style
-$("<link>").attr({ rel: "stylesheet",type: "text/css",href: "/style.css"}).appendTo("head");
+$("<link>").attr({ rel: "stylesheet",type: "text/css",href: "https://danmako.sinaapp.com/style.css"}).appendTo("head");
 
 var firebase;
 $.ajaxSetup({cache: true});
