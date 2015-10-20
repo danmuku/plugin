@@ -51,8 +51,11 @@
 	<!--end screen-->
 
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 <script type="text/javascript">
 	$(function(){
+
+		firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/');
 
 		
 		//点击展开
@@ -67,24 +70,29 @@
 		
 		//发表评论
 		$(".s_btn").click(function(){
-			var text=$(".s_txt").val();
-			$(".s_show").append("<div>"+text+"</div>");
-			init_screen();
+			post();
 		});
 
 		$(".s_txt").keydown(function(){
 			var code = window.event.keyCode;
 
-			//alert(code);
-
-			if(code == 13)//回车键按下时，输出到弹幕
-
-			{
-				var text=$(".s_txt").val();
-				$(".s_show").append("<div>"+text+"</div>");
-				init_screen();
+			if(code == 13){
+				post();
 			}
 		});
+
+		function post(){
+			var text=$(".s_txt").val();
+			firebase.push(text);
+		}
+
+		firebase.on('child_added', function(snapshot) {
+			var message = snapshot.val();
+			console.log(message)
+			$(".s_show").append("<div>"+message+"</div>");
+			init_screen();
+		});
+
 		
 	});
 	
@@ -122,6 +130,10 @@
 			return new Array(7-h.length).join("0")+h
 		})((Math.random()*0x1000000<<0).toString(16))
 	}
+
+
+
+
 
 </script>
 </body>
