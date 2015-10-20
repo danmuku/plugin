@@ -173,14 +173,16 @@
     <!--end send-->
 </div>
 <!--end screen-->
-<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
 </script>
 <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'>
 </script>
 <script type="text/javascript">
     $(function () {
 
-        firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/');
+        var urlLocation = location.href;
+
+        firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/'+ window.btoa(urlLocation));
 
         //点击展开
         $("#click_screen").click(function () {
