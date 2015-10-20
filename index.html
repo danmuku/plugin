@@ -173,7 +173,7 @@
     <!--end send-->
 </div>
 <!--end screen-->
-<script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js">
 </script>
 <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'>
 </script>
@@ -209,7 +209,12 @@
 
         function post() {
             var text = $(".s_txt").val();
-            firebase.push(text);
+            if(text){
+                $(".s_txt").val("");
+                firebase.push(text);
+            }else{
+                $(".s_txt").focus();
+            }
         }
 
         firebase.on('child_added',
