@@ -1,3 +1,8 @@
+if (typeof jQuery === 'undefined') {
+  throw new Error('Danmaco\'s JavaScript requires jQuery');
+}
+
+
 var urlLocation = location.href;
 
 if(urlLocation.charAt(urlLocation.length - 1) === '#'){
@@ -18,7 +23,7 @@ danmacoDiv.appendTo('body');
 
 
 // load style
-$("<link>").attr({ rel: "stylesheet",type: "text/css",href: "style.css"}).appendTo("head");
+$("<link>").attr({ rel: "stylesheet",type: "text/css",href: "/style.css"}).appendTo("head");
 
 var firebase;
 $.ajaxSetup({cache: true});
