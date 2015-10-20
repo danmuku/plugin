@@ -182,6 +182,14 @@
 
         var urlLocation = location.href;
 
+        if(urlLocation.charAt(urlLocation.length - 1)==='#'){
+            urlLocation = urlLocation.substr(0, urlLocation.length-1);
+        }
+
+        if(urlLocation.charAt(urlLocation.length - 1)==='/'){
+            urlLocation = urlLocation.substr(0, urlLocation.length-1);
+        }
+
         firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/'+ window.btoa(urlLocation));
 
         //点击展开
