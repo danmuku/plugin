@@ -23,8 +23,16 @@ $("<link>").attr({ rel: "stylesheet",type: "text/css",href: "style.css"}).append
 var firebase;
 $.ajaxSetup({cache: true});
 // load firebase.js
-$.getScript("firebase.js", function(){
+$.getScript("https://cdn.firebase.com/js/client/2.2.1/firebase.js", function(){
 	firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/'+ window.btoa(urlLocation));
+	firebase.on('child_added',
+    function (snapshot) {
+        var message = snapshot.val();
+        console.log(message);
+        $(".s_show").append("<div>" + message + "</div>");
+        init_screen();
+  	});
+
 });
 
 
@@ -61,13 +69,6 @@ function post() {
     }
 }
 
-firebase.on('child_added',
-    function (snapshot) {
-        var message = snapshot.val();
-        console.log(message);
-        $(".s_show").append("<div>" + message + "</div>");
-        init_screen();
-    });
 
 
 

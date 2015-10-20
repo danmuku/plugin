@@ -1,5 +1,4 @@
 #danmaco {
-    background: #09c;
     font-size: 12px;
     font-family: "微软雅黑";
 }
@@ -118,7 +117,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: #000;
+    background: #004D67;
     opacity: 0.5;
     filter: alpha(opacity=50);
     z-index: 1;
