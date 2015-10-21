@@ -59,7 +59,7 @@ $(document).keydown(function(event){
 	if (keyCode == 13) {
         post();
     }else if(keyCode == 27){
-    	$(".screen").toggle(600);
+    	$(".danmako_screen").toggle(600);
     }
 });
 
