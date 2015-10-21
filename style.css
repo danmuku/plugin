@@ -1,10 +1,5 @@
-#danmaco {
-    font-size: 12px;
-    font-family: "微软雅黑";
-}
 
-
-.screen {
+.danmako_screen {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -13,10 +8,10 @@
     display: none;
 }
 
-.screen .s_dm {
+.danmako_screen .s_dm {
 }
 
-.screen .s_dm .s_close {
+.danmako_screen .s_dm .s_close {
     width: 100px;
     height: 40px;
     display: block;
@@ -26,23 +21,22 @@
     text-decoration: none;
     font-size: 21px;
     color: #c0c0c0;
-    font-family: "微软雅黑";
     position: absolute;
     top: 20px;
     right: 20px;
     z-index: 3;
 }
 
-.screen .s_dm .s_close:hover {
+.danmako_screen .s_dm .s_close:hover {
     color: #fff;
 }
 
-.screen .s_dm .s_show {
+.danmako_screen .s_dm .s_show {
     position: relative;
     z-index: 2;
 }
 
-.screen .s_dm .s_show div {
+.danmako_screen .s_dm .s_show div {
     line-height: 36px;
     font-size: 24px;
     font-weight: bold;
@@ -51,7 +45,7 @@
     left: 0;
 }
 
-.screen .send {
+.danmako_screen .send {
     width: 100%;
     height: 80px;
     background: #000;
@@ -60,42 +54,40 @@
     z-index: 2;
 }
 
-.screen .send .s_con {
+.danmako_screen .send .s_con {
     width: 100%;
     height: 80px;
     text-align: center;
     line-height: 80px;
 }
 
-.screen .send .s_con .s_txt {
+.danmako_screen .send .s_con .s_txt {
     width: 700px;
     height: 40px;
     border: 0;
     font-size: 18px;
-    font-family: "微软雅黑";
     padding-left: 12px;
     border-radius: 3px 0 0 3px;
     outline: none;
 }
 
-.screen .send .s_con .s_btn {
+.danmako_screen .send .s_con .s_btn {
     width: 100px;
     height: 40px;
     background: #088;
     border: 0;
     font-size: 18px;
-    font-family: "微软雅黑";
     color: #fff;
     cursor: pointer;
     border-radius: 0 3px 3px 0;
     outline: none;
 }
 
-.screen .send .s_con .s_btn:hover {
+.danmako_screen .send .s_con .s_btn:hover {
     background: #006c6c;
 }
 
-.screen .s_dm .mask {
+.danmako_screen .s_dm .mask {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -107,4 +99,4 @@
     z-index: 1;
 }
 
-/*end screen*/
+/*end danmako_screen*/

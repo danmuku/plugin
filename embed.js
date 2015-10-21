@@ -14,10 +14,10 @@ if(urlLocation.charAt(urlLocation.length - 1) === '/'){
 }
 
 // create div
-var danmacoDiv=$('<div id="danmaco"><div class="screen"><div class="s_dm"><div class="mask"></div>\
+var danmacoDiv=$('<div class="danmako_screen"><div class="s_dm"><div class="mask"></div>\
 <div class="s_show"></div></div><div class="send">\
 <div class="s_con"><input type="text" class="s_txt"/>\
-<input type="button" class="s_btn" value="发表评论"/></div></div></div></div>');            
+<input type="button" class="s_btn" value="发表评论"/></div></div></div>');            
 danmacoDiv.appendTo('body');   
 
 
