@@ -6,6 +6,7 @@
     left: 0;
     top: 0;
     display: none;
+    z-index: 1050;
 }
 
 .danmako_screen .s_dm {
