@@ -22,8 +22,25 @@ $(document).ready(function(){
 });
 
 function init(){
-	for(var i = 0; i < 1000; i++) {
-		post(i);
+
+	var fakes = [
+	    "Sogou 第二届黑客马拉松",
+	    "Biztech 万岁！",
+	    "评委老师们好~",
+	    "我是萌萌的弹幕~~~~",
+	    "前方高能",
+	    "刚才那个是假高能",
+	    "我来承包！",
+	    "PHP是违反广告法的语言！",
+	    "小鲜肉团队荣誉出品",
+	    "双十一我要剁手剁手剁手！",
+	    "折腾了一下午TMD代码没提交….",
+	    "这个逼装的我给一百分",
+	    "川总在哪里！！？？",
+	    "活捉川总一只！",
+	    "么么哒"];
+	for(var i = 0; i < fakes.length; i++) {
+		post(fakes[i]);
 	}
 	init_screen();
 }
