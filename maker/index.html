@@ -56,16 +56,25 @@ function post(message) {
 
 //初始化弹幕
 function init_screen() {
-    var _top = 0;
-
     $(".s_show").find("div").show().each(function () {
         var _width = $('#danmako_img').width();
         var _height = $('#danmako_img').height();
 
+        var _left = Math.random()*(_width);
+        var _top = Math.random()*(_height);
+
+        if(_top + $(this).height() > _height){
+        	_top = _height - $(this).height();
+        }
+
+        if(_left + $(this).width() > _width){
+        	_left = _width - $(this).width();
+        }
+
         //设定文字的位置
         $(this).css({
-            left: Math.random()*(_width),
-            top: Math.random()*(_height),
+            left: _left,
+            top: _top,
             color: getRandomColor()
         });
 
