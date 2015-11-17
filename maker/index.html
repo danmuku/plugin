@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="https://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>弹幕生成器</title>
+</head>
+
+<body>
+	<img id="danmako_img"src="test.png" />
+    <div class="danmako_screen">
+        <div class="s_dm">
+            <div class="s_show"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	init();
+});
+
+function init(){
+	for(var i = 0; i < 1000; i++) {
+		post(i);
+	}
+	init_screen();
+}
+
+function post(message) {
+	 $(".s_show").append("<div>" + message + "</div>");
+}
+
+
+
+
+
+
+//初始化弹幕
+function init_screen() {
+    var _top = 0;
+
+    $(".s_show").find("div").show().each(function () {
+        var _width = $('#danmako_img').width();
+        var _height = $('#danmako_img').height();
+
+        //设定文字的位置
+        $(this).css({
+            left: Math.random()*(_width),
+            top: Math.random()*(_height),
+            color: getRandomColor()
+        });
+
+    });
+}
+
+//随机获取颜色值
+function getRandomColor() {
+    return '#' + (function (h) {
+            return new Array(7 - h.length).join("0") + h
+        })((Math.random() * 0x1000000 << 0).toString(16))
+}
+</script>
+
+</html>
