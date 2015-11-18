@@ -1,7 +1,6 @@
 var global_pid = "";
 var global_url = "";
 var storageData = localStorage.weiboData ? JSON.parse(localStorage.weiboData) : [];
-
 $(document).ready(function(){
 
 	$(".clicker").hover(
@@ -109,7 +108,6 @@ $(document).ready(function(){
         event.preventDefault();
 		var filesToUpload = document.getElementById('input').files;
 		var file = filesToUpload[0];
-		//console.log(file);
 		if(!/image\/\w+/.test(file.type) || file == "undefined"){
 			swal("文件必须为图片！");
 			return false;
@@ -126,7 +124,6 @@ $(document).ready(function(){
 			for (var i = 0, l = items.length; i < l; i++) {
 			  if((item = items[i]) && item.kind == 'file' && item.type.match(/^image\//i)) {
 				b = true;
-				console.log(item);
 				previewAndUpload(item.getAsFile());
 			  } else {
 				swal("您粘贴的不是图片~");
@@ -191,7 +188,7 @@ $(document).ready(function(){
 		reader.onload = function(e){
 			$('.clicker').prop('src', '');
 			$('.clicker').css('background-image', 'url('+ this.result + ')');
-			console.log(this.result);
+			imgWithDanmu(this.result);
 			$('.clicker').css('background-position', 'center');
 		};
 		reader.onloadend = function(e) {
@@ -227,5 +224,95 @@ $(document).ready(function(){
 			xhr.open('POST', 'http://picupload.service.weibo.com/interface/pic_upload.php?&mime=image%2Fjpeg&data=base64&url=0&markpos=1&logo=&nick=0&marks=1&app=miniblog');
 			xhr.send(data);
 		};
+	}
+
+	function imgWithDanmu(base64Img){
+		var danmacoDiv = $('<div id="danmako_container"><img id="danmako_img" src="{imgsrc}" />\
+			<div class="danmako_screen"><div class="s_dm"><div class="s_show"></div></div></div></div>'.replace(/{imgsrc}/, base64Img));
+		danmacoDiv.appendTo('body'); 
+
+		var img = new Image();
+		img.onload = function() {
+			$('#danmako_container').width(img.naturalWidth);
+			$('#danmako_container').height(img.naturalHeight);
+			init();
+			html2canvas($('#danmako_container')).then(function(canvas) {
+		    	console.log(canvas);
+		        var dataUrl = canvas.toDataURL('image/png');
+		        console.log(dataUrl);
+		    });
+		};
+		img.src = base64Img; 
+
+
+
+
+		function init(){
+			var fakes = [
+			    "Sogou 第二届黑客马拉松",
+			    "Biztech 万岁！",
+			    "评委老师们好~",
+			    "我是萌萌的弹幕~~~~",
+			    "前方高能",
+			    "刚才那个是假高能",
+			    "我来承包！",
+			    "PHP是违反广告法的语言！",
+			    "小鲜肉团队荣誉出品",
+			    "双十一我要剁手剁手剁手！",
+			    "折腾了一下午TMD代码没提交….",
+			    "这个逼装的我给一百分",
+			    "川总在哪里！！？？",
+			    "活捉川总一只！",
+			    "么么哒"];
+			for(var i = 0; i < fakes.length; i++) {
+				post(fakes[i]);
+			}
+
+
+			init_screen();
+		}
+
+		function post(message) {
+			 $(".s_show").append("<div>" + message + "</div>");
+		}
+
+		//初始化弹幕
+		function init_screen() {
+		    $(".s_show").find("div").show().each(function () {
+		        var _width = $('#danmako_container').width();
+		        var _height = $('#danmako_container').height();
+
+		        var _left = Math.random()*(_width);
+		        var _top = Math.random()*(_height);
+
+		        if(_top + $(this).height() > _height){
+		        	_top = _height - $(this).height();
+		        }
+
+		        if(_left + $(this).width() > _width){
+		        	_left = _width - $(this).width();
+		        }
+
+		        _left = $('#danmako_container').offset().left + _left;
+		        _top = $('#danmako_container').offset().top + _top;
+
+
+		        //设定文字的位置
+		        $(this).css({
+		            left: _left,
+		            top: _top,
+		            color: getRandomColor()
+		        });
+
+		    });
+		}
+
+
+//随机获取颜色值
+function getRandomColor() {
+    return '#' + (function (h) {
+            return new Array(7 - h.length).join("0") + h
+        })((Math.random() * 0x1000000 << 0).toString(16))
+}
 	}
 });
