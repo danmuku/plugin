@@ -182,18 +182,21 @@ $(document).ready(function(){
 
 	function previewAndUpload(file) {
 		$(".loader-wrap").show();
+		console.log(file);
 		var reader = new FileReader();
 		var imgFile;
 		reader.readAsDataURL(file);
 		reader.onload = function(e){
 			$('.clicker').prop('src', '');
 			$('.clicker').css('background-image', 'url('+ this.result + ')');
-			imgWithDanmu(this.result);
 			$('.clicker').css('background-position', 'center');
 		};
 		reader.onloadend = function(e) {
 			imgFile = e.target;
-			var base64 = imgFile.result.split(',')[1];
+			var base64 = imgWithDanmu(imgFile.result);
+			console.log(base64)
+			base64 = base64.split(',')[1];
+			console.log(base64)
 			var xhr = new XMLHttpRequest();
 			var data = new FormData();
 			data.append('b64_data', base64);
@@ -231,18 +234,23 @@ $(document).ready(function(){
 			<div class="danmako_screen"><div class="s_dm"><div class="s_show"></div></div></div></div>'.replace(/{imgsrc}/, base64Img));
 		danmacoDiv.appendTo('body'); 
 
-		var img = new Image();
-		img.onload = function() {
-			$('#danmako_container').width(img.naturalWidth);
-			$('#danmako_container').height(img.naturalHeight);
-			init();
-			html2canvas($('#danmako_container')).then(function(canvas) {
-		    	console.log(canvas);
-		        var dataUrl = canvas.toDataURL('image/png');
-		        console.log(dataUrl);
-		    });
-		};
-		img.src = base64Img; 
+		return loadImg(base64Img);
+
+
+		function loadImg(base64Img) {
+		    var image = new Image();
+		    image.src = base64Img;
+		    var x = image.onload = function() {
+				$('#danmako_container').width(image.naturalWidth);
+				$('#danmako_container').height(image.naturalHeight);
+				init();
+				html2canvas($('#danmako_container')).then(function(canvas) {
+			        var dataUrl = canvas.toDataURL('image/png');
+			        return dataUrl;
+			    });
+		    }();
+  		  return x;
+		}
 
 
 
