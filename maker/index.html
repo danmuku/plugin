@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script type="text/javascript" src="https://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/html2canvas.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>弹幕生成器</title>
 </head>
@@ -19,7 +20,27 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	init();
+
+    html2canvas(document.body).then(function(canvas) {
+        var canvasContext  = canvas.getContext('2d');
+        console.log(canvasContext);
+        var img = new Image();
+        img.setAttribute('crossOrigin', 'anonymous');
+        img.src = 'test.png';
+        img.onload = function(){
+            canvasContext.drawImage(img,1000,1000);
+            var dataUrl = canvas.toDataURL('image/png');
+            console.log(dataUrl);
+            var newImg = '<h2>create Img </h2>';
+            newImg += '<img src="' + dataUrl + '">';
+            $('body').append(newImg);
+        };
+
+
+    });
 });
+
+
 
 function init(){
 
@@ -49,11 +70,6 @@ function post(message) {
 	 $(".s_show").append("<div>" + message + "</div>");
 }
 
-
-
-
-
-
 //初始化弹幕
 function init_screen() {
     $(".s_show").find("div").show().each(function () {
@@ -80,6 +96,7 @@ function init_screen() {
 
     });
 }
+
 
 //随机获取颜色值
 function getRandomColor() {

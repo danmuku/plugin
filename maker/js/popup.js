@@ -41,12 +41,6 @@ $(document).ready(function(){
 		}
 	});
 
-	//exit with ESC press
-	$(document).keydown(function(event){
-		if(event.keyCode == 27) {
-			window.close();
-		}
-	});
 
 	$(".clicker").click(function () {
 		$('#input').trigger('click');
@@ -196,7 +190,8 @@ $(document).ready(function(){
 		reader.readAsDataURL(file);
 		reader.onload = function(e){
 			$('.clicker').prop('src', '');
-			$('.clicker').css('background-image', 'url('+ this.result+')');
+			$('.clicker').css('background-image', 'url('+ this.result + ')');
+			console.log(this.result);
 			$('.clicker').css('background-position', 'center');
 		};
 		reader.onloadend = function(e) {
