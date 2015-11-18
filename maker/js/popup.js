@@ -228,7 +228,7 @@ function previewAndUpload(file) {
                     }
                 }
             };
-            xhr.open('POST', 'http://picupload.service.weibo.com/interface/pic_upload.php?&mime=image%2Fjpeg&data=base64&url=0&markpos=1&logo=&nick=0&marks=1&app=miniblog');
+            xhr.open('POST', 'https://picupload.service.weibo.com/interface/pic_upload.php?&mime=image%2Fjpeg&data=base64&url=0&markpos=1&logo=&nick=0&marks=1&app=miniblog');
             xhr.send(data);
         });
 
@@ -242,12 +242,6 @@ function init_danmako(base64Img) {
 			<div class="danmako_screen"><div class="s_dm"><div class="s_show"></div></div></div></div>'.replace(/{imgsrc}/, base64Img));
     
     danmacoDiv.appendTo('body');
-    
-    // var elem = $('#danmako_container');
-    // if(!elem.is(":visible")){
-    //     alert(true);
-    //     elem.show();elem.fadeIn(1);elem.fadeOut(1);
-    // }
     
     var fakes = ["Sogou 第二届黑客马拉松", "Biztech 万岁！", "评委老师们好~", "我是萌萌的弹幕~~~~", "前方高能", "刚才那个是假高能", "我来承包！", "PHP是违反广告法的语言！", "小鲜肉团队荣誉出品", "双十一我要剁手剁手剁手！", "折腾了一下午TMD代码没提交….", "这个逼装的我给一百分", "川总在哪里！！？？", "活捉川总一只！", "么么哒"];
     
