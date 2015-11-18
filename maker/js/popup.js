@@ -143,7 +143,7 @@ function previewAndUpload(file) {
                             return true;
                         } catch(e) {
                             console.log(e);
-                            alert("上传失败");
+                            swal("上传失败");
                             return;
                         }
                     } else {
@@ -151,7 +151,7 @@ function previewAndUpload(file) {
                     }
                 }
             };
-            xhr.open('POST', 'http://up.qiniu.com/putb64/-1', true);
+            xhr.open('POST', '//up.qiniu.com/putb64/-1', true);
             xhr.setRequestHeader("Content-Type", "application/octet-stream"); 
             xhr.setRequestHeader("Authorization", "UpToken 1OcsILqPu9A_YrO7bgAEBowPWwmjTfzt_zUoINRC:82pcWY5ZN-8wc1vfDvqUcsm3BQE=:eyJzY29wZSI6ImRhbm1ha28iLCJkZWFkbGluZSI6MTQ0Nzg3MjEyMH0="); 
             xhr.send(base64);
