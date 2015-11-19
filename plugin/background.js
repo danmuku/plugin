@@ -24,7 +24,7 @@ chrome.storage.onChanged.addListener(function(changes, areaName) {
  * Depending on danmakco it should be red/default
  */
 var setIconColor = function() {
-  var newIconPath = danmacoOn ? './open.png' : './close.png';
+  var newIconPath = danmacoOn ? './close.png' : './open.png';
   chrome.browserAction.setIcon({
     path: newIconPath
   });

@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set up toggle checkbox for danmaco mode
   getOption_('danmacoOn', false, function(item) {
     var danmacoOnCheckbox = document.getElementById('danmaco-checkbox');
-    console.log(danmacoOnCheckbox);
     danmacoOnCheckbox.addEventListener('click', toggleDanmaco, false);
     var danmacoEnabled = item.danmacoOn;
     if (danmacoEnabled) {

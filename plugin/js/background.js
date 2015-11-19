@@ -1,5 +1,5 @@
 // Load prefs about whether danmaco  is on. Structure is:
-//  { httpNowhere: true/false }
+//  { danmacoOn: true/false }
 
 var danmacoOn = false;
 chrome.storage.sync.get({danmacoOn: false}, function(item) {
@@ -24,7 +24,7 @@ chrome.storage.onChanged.addListener(function(changes, areaName) {
  * Depending on danmakco it should be red/default
  */
 var setIconColor = function() {
-  var newIconPath = danmacoOn ? './close.png' : './open.png';
+  var newIconPath = danmacoOn ? './open.png' : './close.png';
   chrome.browserAction.setIcon({
     path: newIconPath
   });
