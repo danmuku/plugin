@@ -75,22 +75,19 @@ function post() {
 
 //初始化弹幕
 function init_screen() {
-    var _top = 0;
 
     $(".s_show").find("div").show().each(function() {
         var _left = $(window).width() - $(this).width();
         var _height = $(window).height();
 
-        _top = _top + 80;
+        var _top = Math.random()*(_height);
 
         if (_top > _height - 100) {
-            _top = 80;
+            _top = 20;
         }
 
-        var time = 10000;
-        if ($(this).index() % 2 == 0) {
-            time = 20000;
-        }
+        var time = Math.random() * 50000;
+
         //设定文字的初始化位置
         $(this).css({
             left: _left,
@@ -101,9 +98,7 @@ function init_screen() {
             left: "-" + _left + "px"
         },
         time,
-        function() {
-
-});
+        function() {});
 
     });
 }
