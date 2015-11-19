@@ -1,14 +1,20 @@
 {
   "manifest_version": 2,
-
+   "author": {
+      "email": "veryyoung.me@gmail.com"
+   },
+   "background": {
+      "scripts": [ "js/background.js" ]
+   },
   "name": "danmaco",
   "description": "在任何网页上都可以弹幕啦！！",
   "version": "1.0",
+
 
   "browser_action": {
     "default_icon": "close.png",
     "default_popup": "popup.html"
   },
 
-  "permissions": [ "webRequest", "webRequestBlocking", "*://*/", "tabs", "contextMenus" ]
+  "permissions": [ "webRequest", "webRequestBlocking", "*://*/", "tabs", "contextMenus", "storage" ]
 }
