@@ -7,29 +7,37 @@ if(urlLocation.charAt(urlLocation.length - 1) === '#'){
 if(urlLocation.charAt(urlLocation.length - 1) === '/'){
 	urlLocation = urlLocation.substr(0, urlLocation.length-1);
 }
+chrome.storage.sync.get({danmacoOn: false}, function(item) {
+  var danmacoOn = item.danmacoOn;
 
-// create div
-var danmacoDiv=$('<div class="danmako_screen"><div class="s_dm"><div class="mask"></div>\
-<div class="s_show"></div></div><div class="send">\
-<div class="s_con"><input type="text" class="s_txt"/>\
-<input type="button" class="s_btn" value="发表评论"/></div></div></div>');            
-danmacoDiv.appendTo('body');   
+  // danmu only when danmacoOn
+  if(danmacoOn){
+  // create div
+  var danmacoDiv=$('<div class="danmako_screen"><div class="s_dm"><div class="mask"></div>\
+    <div class="s_show"></div></div><div class="send">\
+    <div class="s_con"><input type="text" class="s_txt"/>\
+    <input type="button" class="s_btn" value="发表评论"/></div></div></div>');            
+  danmacoDiv.appendTo('body');   
 
+  var firebase;
+  $.ajaxSetup({cache: true});
 
-var firebase;
-$.ajaxSetup({cache: true});
-// load firebase.js
-$.getScript("https://cdn.firebase.com/js/client/2.2.1/firebase.js", function(){
-	firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/'+ window.btoa(urlLocation));
-	firebase.on('child_added',
-    function (snapshot) {
-        var message = snapshot.val();
-        console.log(message);
-        $(".s_show").append("<div>" + message + "</div>");
-        init_screen();
-  	});
+  // load firebase.js
+  $.getScript("https://cdn.firebase.com/js/client/2.2.1/firebase.js", function(){
+    firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/'+ window.btoa(urlLocation));
+    firebase.on('child_added',
+        function (snapshot) {
+            var message = snapshot.val();
+            console.log(message);
+            $(".s_show").append("<div>" + message + "</div>");
+            init_screen();
+        });
+    });
+  };
 
 });
+
+
 
 
 
