@@ -18,7 +18,7 @@
     {
       "matches": ["<all_urls>"],
       "css": ["style.css"],
-      "js": ["js/jquery.min.js", "js/danmaco.js"]
+      "js": ["js/jquery.min.js", "js/danmaco.js", "js/firebase.js"]
     }],
   "browser_action": {
     "default_icon": "close.png",
