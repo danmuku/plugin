@@ -1,39 +1,53 @@
-var firebase;
 
+
+// create div
+var danmacoDiv = $('<div class="danmako_screen"><div class="s_dm"><div class="mask"></div>\
+    <div class="s_show"></div></div><div class="send">\
+    <div class="s_con"><input type="text" class="s_txt"/>\
+    <input type="button" class="s_btn" value="发表评论"/></div></div></div>');
+
+danmacoDiv.appendTo('body');
+
+// build firebase for the url
+        
+var urlLocation = location.href;
+
+if (urlLocation.charAt(urlLocation.length - 1) === '#') {
+    urlLocation = urlLocation.substr(0, urlLocation.length - 1);
+}
+
+if (urlLocation.charAt(urlLocation.length - 1) === '/') {
+    urlLocation = urlLocation.substr(0, urlLocation.length - 1);
+}
+
+var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/' + window.btoa(urlLocation));
+
+firebase.on('child_added',function(snapshot) {
+    var message = snapshot.val();
+    $(".s_show").append("<div>" + message + "</div>");
+    init_screen();
+});
+
+var danmacoOn = false;
 chrome.storage.sync.get({danmacoOn: false}, function(item) {
-    var danmacoOn = item.danmacoOn;
+    danmacoOn = item.danmacoOn;
+});
 
-    // danmu only when danmacoOn
-    if (danmacoOn) {
-        // create div
-        var danmacoDiv = $('<div class="danmako_screen"><div class="s_dm"><div class="mask"></div>\
-            <div class="s_show"></div></div><div class="send">\
-            <div class="s_con"><input type="text" class="s_txt"/>\
-            <input type="button" class="s_btn" value="发表评论"/></div></div></div>');
-        danmacoDiv.appendTo('body');
-
-        // build firebase
-        var urlLocation = location.href;
-
-        if (urlLocation.charAt(urlLocation.length - 1) === '#') {
-            urlLocation = urlLocation.substr(0, urlLocation.length - 1);
+// danmu only when danmacoOn
+$(document).keydown(function(event) {
+    if(danmacoOn){
+        var keyCode = event.keyCode;
+        if (keyCode == 13) {
+            post();
+        } else if (keyCode == 27) {
+            $(".danmako_screen").toggle(600);
         }
-
-        if (urlLocation.charAt(urlLocation.length - 1) === '/') {
-            urlLocation = urlLocation.substr(0, urlLocation.length - 1);
-        }
-
-        firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/' + window.btoa(urlLocation));
-
-        firebase.on('child_added',
-        function(snapshot) {
-            var message = snapshot.val();
-            $(".s_show").append("<div>" + message + "</div>");
-            init_screen();
-        });
     }
 
 });
+
+
+
 
 //发表评论
 $(".s_btn").click(function() {
@@ -47,14 +61,7 @@ $(".s_txt").keydown(function() {
     }
 });
 
-$(document).keydown(function(event) {
-    var keyCode = event.keyCode;
-    if (keyCode == 13) {
-        post();
-    } else if (keyCode == 27) {
-        $(".danmako_screen").toggle(600);
-    }
-});
+
 
 function post() {
     var text = $(".s_txt").val();
