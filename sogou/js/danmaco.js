@@ -7,12 +7,13 @@ firebase.on('child_added', function (snapshot) {
     init_screen();
 });
 
-
-
-//发表评论
-$(".s_btn").click(function () {
-    post();
+$(document).ready(function(){
+    //发表评论
+    $(".s_btn").click(function () {
+        post();
+    });
 });
+
 
 
 $(document).keydown(function(event){
@@ -21,6 +22,7 @@ $(document).keydown(function(event){
         post();
     }
 });
+
 
 function post() {
     var text = $(".s_txt").val();
