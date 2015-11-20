@@ -48,7 +48,7 @@ function init_screen() {
             _top = 20;
         }
 
-        var time = Math.random() * 50000;
+        var time = Math.random() * 50000 + 10000;
 
         //设定文字的初始化位置
         $(this).css({
