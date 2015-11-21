@@ -1,6 +1,4 @@
 <?php
-namespace Firebase;
-
 /**
  * Class FirebaseStub
  *

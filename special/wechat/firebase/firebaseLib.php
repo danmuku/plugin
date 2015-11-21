@@ -1,5 +1,4 @@
 <?php
-namespace Firebase;
 
 use \Exception;
 
