@@ -1,4 +1,5 @@
 <?php
+namespace Firebase;
 /**
  * 微信公众平台 PHP SDK 示例文件
  *
@@ -6,6 +7,9 @@
  */
 
   require('Wechat.php');
+  require('firebase/firebaseInterface.php');
+  require('firebase/firebaseStub.php');
+  require('firebase/firebaseLib.php');
 
   /**
    * 微信公众平台演示类
@@ -54,7 +58,9 @@
      * @return void
      */
     protected function onText() {
-      $this->responseText('收到了文字消息：' . $this->getRequest('content') . '快到墙上看看吧！');
+      $firebaseStub = new FirebaseStub("'https://dazzling-fire-9662.firebaseio.com/sogou-hackathon2", '');
+      $firebaseStub->push("/", $this->getRequest('content'));
+      $this->responseText('收到了文字消息：' . $this->getRequest('content') . '\n快到墙上看看吧！');
     }
 
     /**
