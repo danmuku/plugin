@@ -4,7 +4,7 @@ include "wechat.class.php";
 
 $options = array('token'=>'little_fresh_boys', //填写你设定的key
  		'appid'=>'wxce6838b261a9f625', //填写高级调用功能的app id
- 		// 'encodingaeskey'=>'encodingaeskey',
+ 		'encodingaeskey'=>'encodingaeskey',
  		'debug' => true ,
  		'appsecret'=>'d4624c36b6795d1d99dcf0547af5443d' //填写高级调用功能的密钥
  		);
