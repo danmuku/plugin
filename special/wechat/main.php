@@ -5,15 +5,12 @@ include "wechat.class.php";
 $options = array('token'=>'littlefreshboys', //填写你设定的key
  		'appid'=>'wxcc190ba360c1fac4', //填写高级调用功能的app id
  		'encodingaeskey'=>'dgHcsvFjMiQYdsHvCx7X8HzGcE50Wt2b3vad5pvJg7D',
- 		'appsecret'=>'685d2f5d39295d9eef398818f7020fbd' //填写高级调用功能的密钥
+ 		'appsecret'=>'588fb22463d746004686ff90fbf69bba' //填写高级调用功能的密钥
  		);
 
 $weObj = new Wechat($options);
-$ret = $weObj->valid();
-if (!$ret) {
-    var_dump($ret);
-    exit;
-}
+
+$weObj->valid();
 
 $type = $weObj->getRev()->getRevType();
 
