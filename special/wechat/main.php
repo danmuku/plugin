@@ -8,7 +8,12 @@ $options = array('token'=>'little_fresh_boys', //填写你设定的key
  	);
 
 $weObj = new Wechat($options);
-// $weObj->valid();
+$ret = $weObj->valid();
+if (!$ret) {
+    var_dump($ret);
+    exit;
+}
+
 $type = $weObj->getRev()->getRevType();
 
 switch($type) {
