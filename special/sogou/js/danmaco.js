@@ -1,44 +1,14 @@
 
-var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/'+ 'sogou-hackathon2');
+var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/'+ 'sogou-hackthon2');
 
 firebase.on('child_added', function (snapshot) {
     var message = snapshot.val();
     $(".s_show").append("<div>" + message + "</div>");
-    init_screen();
+    refresh_screen();
 });
-
-$(document).ready(function(){
-    //发表评论
-    $(".s_btn").click(function () {
-        post();
-    });
-});
-
-
-
-$(document).keydown(function(event){
-    var keyCode = event.keyCode;
-    if (keyCode == 13) {
-        post();
-    }
-});
-
-
-function post() {
-    var text = $(".s_txt").val();
-    if (text) {
-        $(".s_txt").val("");
-        firebase.push(text);
-    } else {
-        $(".s_txt").focus();
-    }
-}
-
-
-
 
 //初始化弹幕
-function init_screen() {
+function refresh_screen() {
 
     $(".s_show").find("div").show().each(function() {
         var _left = $(window).width() - $(this).width();

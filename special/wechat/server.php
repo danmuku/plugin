@@ -18,7 +18,7 @@
      * @return void
      */
     protected function onSubscribe() {
-      $this->responseText('欢迎关注');
+      $this->responseText('欢迎关注弹幕时代，发送任何信息即可在大屏幕上飘起来啦！！~~赶紧试试吧！！');
     }
 
     /**
@@ -27,7 +27,7 @@
      * @return void
      */
     protected function onScan() {
-      $this->responseText('二维码的EventKey：' . $this->getRequest('EventKey'));
+      $this->responseText('欢迎关注弹幕时代，发送任何信息即可在大屏幕上飘起来啦！！~~赶紧试试吧！！');
     }
 
     /**
@@ -54,7 +54,7 @@
      * @return void
      */
     protected function onText() {
-      $this->responseText('收到了文字消息：' . $this->getRequest('content'));
+      $this->responseText('收到了文字消息：' . $this->getRequest('content') . '快到墙上看看吧！');
     }
 
     /**
@@ -77,9 +77,7 @@
      * @return void
      */
     protected function onLocation() {
-      $num = 1 / 0;
       // 故意触发错误，用于演示调试功能
-
       $this->responseText('收到了位置消息：' . $this->getRequest('location_x') . ',' . $this->getRequest('location_y'));
     }
 

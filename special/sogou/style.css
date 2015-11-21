@@ -13,20 +13,6 @@ body {
 }
 
 
-.danmako_screen .send {
-    width: 100%;
-    height: 80px;
-    background: #000;
-    position: absolute;
-    bottom: 0;
-}
-
-.danmako_screen .send .s_con {
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-}
 
 .danmako_screen .send .s_con .s_txt {
     width: 700px;
