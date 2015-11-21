@@ -1,7 +1,7 @@
 <?php
 
   $encodingAesKey = "";
-  $token = "xiaoxianrou";
+  $token = "danmushidai";
   $appId = "";
   
   $debugMode = TRUE;
