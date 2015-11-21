@@ -50,6 +50,7 @@ body {
     font-size: 24px;
     font-weight: bold;
     position: absolute;
+    white-space:nowrap;
     top: 0;
     left: 0;
 }

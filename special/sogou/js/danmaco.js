@@ -18,7 +18,7 @@ function refresh_screen() {
         _top = 20;
     }
 
-    var time = Math.random() * 50000 + 10000;
+    var time = Math.random() * 20000 + 10000;
 
     //设定文字的初始化位置
     $(".s_show").children("div:last-child").css({
