@@ -267,7 +267,7 @@ class Wechat
 	public function valid($return=false)
     {
         $encryptStr="";
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        if ($_SERVER['REQUEST_METHOD'] == "GET") {
             $postStr = file_get_contents("php://input");
             $array = (array)simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
             $this->encrypt_type = isset($_GET["encrypt_type"]) ? $_GET["encrypt_type"]: '';
