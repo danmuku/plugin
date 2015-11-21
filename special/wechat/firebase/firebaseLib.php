@@ -1,7 +1,5 @@
 <?php
 
-use \Exception;
-
 
 /**
  * Firebase PHP Client Library
