@@ -9,32 +9,25 @@ firebase.on('child_added', function (snapshot) {
 
 //初始化弹幕
 function refresh_screen() {
+    var _width = $(window).width();
 
-    $(".s_show").find("div").show().each(function() {
-        var _left = $(window).width() - $(this).width();
-        var _height = $(window).height();
+    var _height = $(window).height();
+    var _top = Math.random()*(_height);
 
-        var _top = Math.random()*(_height);
+    if (_top > _height - 100) {
+        _top = 20;
+    }
 
-        if (_top > _height - 100) {
-            _top = 20;
-        }
+    var time = Math.random() * 50000 + 10000;
 
-        var time = Math.random() * 50000 + 10000;
-
-        //设定文字的初始化位置
-        $(this).css({
-            left: _left,
-            top: _top,
-            color: getRandomColor()
-        });
-        $(this).animate({
-            left: "-" + _left + "px"
-        },
-        time,
-        function() {});
-
+    //设定文字的初始化位置
+    $(".s_show").children("div:last-child").css({
+        left: _width,
+        top: _top,
+        color: getRandomColor()
     });
+
+    $(".s_show").children("div:last-child").animate({left: "-" + _width + "px"}, time, function() {});
 }
 
 //随机获取颜色值
