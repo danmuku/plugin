@@ -47,10 +47,11 @@ body {
 
 .danmako_screen .s_dm .s_show div {
     line-height: 36px;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
     position: absolute;
     white-space:nowrap;
+    font-family: cursive;
     top: 0;
     left: 0;
 }
