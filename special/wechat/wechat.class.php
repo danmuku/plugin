@@ -248,7 +248,7 @@ class Wechat
         $nonce = isset($_GET["nonce"])?$_GET["nonce"]:'';
 
 		$token = $this->token;
-		$tmpArr = array($token, $timestamp, $nonce,$str);
+		$tmpArr = array($token, $timestamp, $nonce, $str);
 		sort($tmpArr, SORT_STRING);
 		$tmpStr = implode( $tmpArr );
 		$tmpStr = sha1( $tmpStr );
