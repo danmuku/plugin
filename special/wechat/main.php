@@ -1,30 +1,81 @@
- <?php
+<?php
+/**
+  * wechat php test
+  */
 
-include "wechat.class.php";
+//define your token
+define("TOKEN", "weixin");
+$wechatObj = new wechatCallbackapi();
+$wechatObj->valid();
 
-$options = array('token'=>'littlefreshboys', //填写你设定的key
- 		// 'appid'=>'wxcc190ba360c1fac4', //填写高级调用功能的app id
- 		'encodingaeskey'=>'dgHcsvFjMiQYdsHvCx7X8HzGcE50Wt2b3vad5pvJg7D',
- 		// 'appsecret'=>'588fb22463d746004686ff90fbf69bba' //填写高级调用功能的密钥
- 		);
+class wechatCallbackapi
+{
+	public function valid()
+    {
+        $echoStr = $_GET["echostr"];
 
-$weObj = new Wechat($options);
+        //valid signature , option
+        if($this->checkSignature()){
+        	echo $echoStr;
+        	exit;
+        }
+    }
 
-$weObj->valid();
+    public function responseMsg()
+    {
+		//get post data, May be due to the different environments
+		$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
 
-$type = $weObj->getRev()->getRevType();
+      	//extract post data
+		if (!empty($postStr)){
+                
+              	$postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
+                $fromUsername = $postObj->FromUserName;
+                $toUsername = $postObj->ToUserName;
+                $keyword = trim($postObj->Content);
+                $time = time();
+                $textTpl = "<xml>
+							<ToUserName><![CDATA[%s]]></ToUserName>
+							<FromUserName><![CDATA[%s]]></FromUserName>
+							<CreateTime>%s</CreateTime>
+							<MsgType><![CDATA[%s]]></MsgType>
+							<Content><![CDATA[%s]]></Content>
+							<FuncFlag>0</FuncFlag>
+							</xml>";             
+				if(!empty( $keyword ))
+                {
+              		$msgType = "text";
+                	$contentStr = "Welcome to wechat world!";
+                	$resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+                	echo $resultStr;
+                }else{
+                	echo "Input something...";
+                }
 
-switch($type) {
-	case Wechat::MSGTYPE_TEXT:
-		$weObj->text("hello, I'm wechat")->reply();
-   		break;
-
-   	case Wechat::MSGTYPE_EVENT:
-  	 	break;
-
-   	case Wechat::MSGTYPE_IMAGE:
-   		break;
-
-   	default:
-   		$weObj->text("help info")->reply();
+        }else {
+        	echo "";
+        	exit;
+        }
+    }
+		
+	private function checkSignature()
+	{
+        $signature = $_GET["signature"];
+        $timestamp = $_GET["timestamp"];
+        $nonce = $_GET["nonce"];	
+        		
+		$token = TOKEN;
+		$tmpArr = array($token, $timestamp, $nonce);
+		sort($tmpArr);
+		$tmpStr = implode( $tmpArr );
+		$tmpStr = sha1( $tmpStr );
+		
+		if( $tmpStr == $signature ){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
+
+?>
