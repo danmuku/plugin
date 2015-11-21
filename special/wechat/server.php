@@ -1,5 +1,4 @@
 <?php
-namespace Firebase;
 /**
  * 微信公众平台 PHP SDK 示例文件
  *
