@@ -111,12 +111,10 @@ function fillInputBlank(pid) {
     $('#res_html').val('<img src="' + callBackImg + '"/>');
     $('#res_ubb').val('[IMG]' + callBackImg + '[/IMG]');
     $('#res_md').val('![](' + callBackImg + ')');
-    $(".loader-wrap").fadeOut("fast");
-    $(".copyBtn").removeClass("disabled");
 }
 
 function previewAndUpload(file) {
-    // $(".loader-wrap").show();
+    $(".loader-wrap").show();
     var reader = new FileReader();
     var imgFile;
     reader.readAsDataURL(file);
@@ -129,7 +127,7 @@ function previewAndUpload(file) {
         imgFile = e.target;
 
         init_danmako(imgFile.result);
-        
+
         html2canvas($('#danmako_container')).then(function (canvas) {
             var base64 = canvas.toDataURL('image/png');
             base64 = base64.split(',')[1];
@@ -158,6 +156,9 @@ function previewAndUpload(file) {
             xhr.setRequestHeader("Authorization", "UpToken 1OcsILqPu9A_YrO7bgAEBowPWwmjTfzt_zUoINRC:bnJk5GpXzhX78F4TgpzZdbhU6PY=:eyJzY29wZSI6ImRhbm1ha28iLCJkZWFkbGluZSI6MTQ1MTU1MzE1N30=");
             xhr.send(base64);
         });
+
+        $(".loader-wrap").fadeOut("fast");
+        $(".copyBtn").removeClass("disabled");
 
     };
 }
