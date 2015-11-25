@@ -130,8 +130,8 @@ function previewAndUpload(file) {
 
         html2canvas($('#danmako_container')).then(function (canvas) {
             var base64 = canvas.toDataURL('image/png');
+            console.log(base64);
             base64 = base64.split(',')[1];
-            $('#danmako_container').remove();
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4) {
@@ -155,11 +155,11 @@ function previewAndUpload(file) {
             xhr.setRequestHeader("Content-Type", "application/octet-stream");
             xhr.setRequestHeader("Authorization", "UpToken 1OcsILqPu9A_YrO7bgAEBowPWwmjTfzt_zUoINRC:bnJk5GpXzhX78F4TgpzZdbhU6PY=:eyJzY29wZSI6ImRhbm1ha28iLCJkZWFkbGluZSI6MTQ1MTU1MzE1N30=");
             xhr.send(base64);
+            $('#danmako_container').remove();
         });
 
         $(".loader-wrap").fadeOut("fast");
         $(".copyBtn").removeClass("disabled");
-
     };
 }
 
@@ -171,14 +171,13 @@ function init_danmako(base64Img) {
 
     danmacoDiv.appendTo('body');
 
-    $('#danmako_container').fadeOut(1);
 
     var words = $("textarea#input_text").val().split("\n")
     
     // var fakes = ["Sogou 第二届黑客马拉松", "Biztech 万岁！", "评委老师们好~", "我是萌萌的弹幕~~~~", "前方高能", "刚才那个是假高能", "我来承包！", "PHP是违反广告法的语言！", "小鲜肉团队荣誉出品", "双十一我要剁手剁手剁手！", "折腾了一下午TMD代码没提交….", "这个逼装的我给一百分", "川总在哪里！！？？", "活捉川总一只！", "么么哒"];
     
     for (var i = 0; i < words.length; i++) {
-        if (!words[i]) {
+        if (words[i]) {
             $(".s_show").append("<div>" + words[i] + "</div>");
         }
     }
