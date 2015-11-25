@@ -10,8 +10,11 @@ danmacoDiv.appendTo('body');
         
 var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/sogou-hackathon2');
 
-firebase.on('child_added',function(snapshot) {
+firebase.on('child_added', function (snapshot) {
     var message = snapshot.val();
+    if (message.length > 39) {
+        message = message.substr(0, 39) + "...";
+    }
     $(".s_show").append("<div>" + message + "</div>");
     refresh_screen();
 });
@@ -19,30 +22,24 @@ firebase.on('child_added',function(snapshot) {
 
 
 // danmu only when danmacoOn
-$(document).keydown(function(event) {
-	var keyCode = event.keyCode;
+$(document).keydown(function (event) {
+    var keyCode = event.keyCode;
     if (keyCode == 13) {
-		post();
+        post();
     } else if (keyCode == 27) {
-			$(".danmako_screen").toggle(600);
+        $(".danmako_screen").toggle(600);
     }
-    
-
 });
 
 
 
 
-//发表评论
-$(".s_btn").click(function() {
-    post();
-});
 
 function refresh_screen() {
     var _width = $(window).width();
 
     var _height = $(window).height();
-    var _top = Math.random()*(_height);
+    var _top = Math.random() * (_height);
 
     if (_top > _height - 100) {
         _top = 20;
@@ -57,12 +54,12 @@ function refresh_screen() {
         color: getRandomColor()
     });
 
-    $(".s_show").children("div:last-child").animate({left: "-" + _width + "px"}, time, function() {});
+    $(".s_show").children("div:last-child").animate({ left: "-" + _width + "px" }, time, function () { });
 }
 
 //随机获取颜色值
 function getRandomColor() {
-    return '#' + (function(h) {
+    return '#' + (function (h) {
         return new Array(7 - h.length).join("0") + h
     })((Math.random() * 0x1000000 << 0).toString(16))
 }
