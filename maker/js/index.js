@@ -178,7 +178,8 @@ function init_danmako(base64Img) {
     
     for (var i = 0; i < words.length; i++) {
         if (words[i]) {
-            $(".s_show").append("<div>" + words[i] + "</div>");
+            var word = $.trim(words[i]);
+            $(".s_show").append("<div>" + word + "</div>");
         }
     }
 
