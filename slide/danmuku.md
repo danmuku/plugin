@@ -1,5 +1,5 @@
 title: danmuku 演示
-speaker: 黄舰航
+speaker: 杨雄伟
 transition: move
 files: /js/jquery.min.js,/css/demo.css,/js/zoom.js,/js/firebase.js,/js/danmaco.js,/css/danmako.css
 theme: dark
@@ -9,14 +9,38 @@ usemathjax: yes
 [slide]
 # 弹幕时代
 ----
-<p style="margin-left:80px">——让文字飘起来</p> {:&.moveIn}
+<p style="margin-left:80px">——让弹幕无处不在</p> {:&.moveIn}
 
 <br /><br />
 
 团队名：小鲜肉 {:&.moveIn}
 
 
-演讲者：黄舰航 {:&.moveIn}
+演讲者：杨雄伟 {:&.moveIn}
+
+[slide]
+
+##团队介绍
+
+<br/>
+
+我们*6*个人今年7月份一起入职搜狗商业平台，被临时的分到了一个小组，一起适应学校到社会的转变，一起成长。
+
+<br />
+
+虽然很快就被分到各个产品线了，但依然紧紧的结合在一起。
+
+<br />
+
+团队5个90后，1个伪90后（89年），最小的92年出生。
+
+<br />
+
+因为是商业平台最年轻的一波人，被同学们亲切的称为“小鲜肉”，于是我们这个团队名也叫自然的叫“小鲜肉”了。
+
+
+
+
 
 [slide]
 ![](http://ww3.sinaimg.cn/large/006ikJG8jw1ey8zsixr63j30zk0zk42b.jpg)
@@ -195,9 +219,7 @@ Maker&微信弹幕墙 -> Plugin&Dev {:&.zoomIn}
 *	商业模式清晰
 
 [slide]
-## 我们的愿景
-----
-让弹幕无处不在 {:&.moveIn}
+
 
 [slide]
 ## Q&A
