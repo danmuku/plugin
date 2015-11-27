@@ -22,21 +22,10 @@ usemathjax: yes
 
 ##团队介绍
 
-<br/>
+*	六个人 {:&.fadeIn}
+*	90 后 
+*	小鲜肉
 
-我们*6*个人今年7月份一起入职搜狗商业平台，被临时的分到了一个小组，一起适应学校到社会的转变，一起成长。
-
-<br />
-
-虽然很快就被分到各个产品线了，但依然紧紧的结合在一起。 {:&.fadeIn}
-
-<br />
-
-团队5个90后，1个伪90后（89年），最小的92年出生。 {:&.fadeIn}
-
-<br />
-
-因为是商业平台最年轻的活力，被前辈们亲切的称为“小鲜肉”，于是我们这个团队名也叫自然的叫“小鲜肉”了。 {:&.fadeIn}
 
 [slide]
 
@@ -60,11 +49,35 @@ usemathjax: yes
 2.	轻量级技术栈 
 3.	协作
 
+[slide]
+
+![](http://ww4.sinaimg.cn/large/9732f922jw1eyftrft5ddj20qo0k076j.jpg)
+
+<br/>
+
+90后最受欢迎奖
+
+[slide]
+
+![](http://ww4.sinaimg.cn/large/9732f922jw1eyftsxgh4lj20ix0dw402.jpg)
+
+<br/>
+
+三等奖
+
+[slide]
+
+![](http://ww4.sinaimg.cn/large/9732f922jw1eyfttm4vwbj20qo0k0acu.jpg)
+
+<br/>
+
+和川总合影
 
 
 
 
 [slide]
+
 ![](http://ww3.sinaimg.cn/large/006ikJG8jw1ey8zsixr63j30zk0zk42b.jpg)
 
 <br/>
