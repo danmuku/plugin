@@ -3,8 +3,8 @@ var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/'+ 'sogou
 
 firebase.on('child_added', function (snapshot) {
     var message = snapshot.val();
-    if(message.length > 39){
-        message = message.substr(0, 39) + "...";
+    if(message.length > 35){
+        message = message.substr(0, 35) + "...";
     }
     $(".s_show").append("<div>" + message + "...</div>");
     refresh_screen();
@@ -30,10 +30,11 @@ function refresh_screen() {
         top: _top,
         color: getRandomColor()
     });
-    
-    console.log($(".s_show").children("div:last-child").html());
+   
 
-    $(".s_show").children("div:last-child").animate({left: "-" + _width + "px"}, time, function() {});
+    $(".s_show").children("div:last-child").animate({left: "-" + _width + "px"}, time, function() {
+        $(this).remove();
+    });
 }
 
 //随机获取颜色值

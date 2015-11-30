@@ -24,8 +24,8 @@ var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/' + windo
 
 firebase.on('child_added',function(snapshot) {
     var message = snapshot.val();
-    if(message.length > 39){
-        message = message.substr(0, 39) + "...";
+    if(message.length > 35){
+        message = message.substr(0, 35) + "...";
     }
     $(".s_show").append("<div>" + message + "</div>");
     init_screen();
