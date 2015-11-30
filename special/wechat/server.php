@@ -58,6 +58,10 @@
      */
     protected function onText() {
       $firebaseStub = new FirebaseLib("https://dazzling-fire-9662.firebaseio.com/sogou-hackathon2", '');
+      $content = $this->getRequest('content');
+      if(strlen($content) > 35){
+        $content = mb_substr($content, 0 ,35);
+      }
       $firebaseStub->push("/", $this->getRequest('content'));
       $this->responseText('收到了文字消息：' . $this->getRequest('content') . "\r\n快到墙上看看吧！");
     }
