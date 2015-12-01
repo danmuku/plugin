@@ -7,7 +7,7 @@ usemathjax: yes
 
 
 [slide]
-# 弹幕时代
+# 拯救不吐槽会死星人：弹幕时代
 ----
 <p style="margin-left:80px">——让弹幕无处不在</p> {:&.moveIn}
 
@@ -105,6 +105,16 @@ usemathjax: yes
 * 认同感
 * 主题交流
 
+[slide data-transition="zoomin"]
+## 当前弹幕的缺陷
+
+----
+* 基本只支持视频 {:&.fadeIn}
+* 弹幕爱好者不能随心所欲地“弹幕”
+* 社交达人不能快速分享弹幕图片
+* 开发者网站集成弹幕需要大量的工作
+
+
 [slide]
 ----
 ##弹幕被玩出了其它花样。
@@ -116,17 +126,6 @@ usemathjax: yes
 [slide]
 
 ![](http://ww2.sinaimg.cn/large/006ikJG8jw1ey8vqe4ee0j315f0kuaur.jpg)
-
-
-[slide data-transition="zoomin"]
-## 当前弹幕的缺陷
-
-----
-* 基本只支持视频 {:&.fadeIn}
-* 弹幕爱好者不能随心所欲地“弹幕”
-* 社交达人不能快速分享弹幕图片
-* 开发者网站集成弹幕需要大量的工作
-
 
 
 
@@ -144,11 +143,17 @@ usemathjax: yes
 
 <br /><br />
 
-1.	Maker {:&.moveIn}
-2.	Plugin
+1.	Plugin  {:&.moveIn}
+2.	Maker
 3.	Dev
 4.	Special
 5.	xyz
+
+
+[slide]
+## Plugin
+
+浏览器插件，使用它可以在任意一个网站弹幕
 
 [slide]
 ## [Maker](http://danmako.sinaapp.com/maker/)
@@ -162,12 +167,6 @@ usemathjax: yes
 [slide]
 
 ![](http://7xofqv.com1.z0.glb.clouddn.com/FjhRQ0yHK6WihqsrZHk2FDZ06z_Q)
-
-
-[slide]
-## Plugin
-
-浏览器插件，使用它可以在任意一个网站弹幕
 
 [slide]
 ## Dev
@@ -201,6 +200,8 @@ usemathjax: yes
 [slide]
 ##web端功能平移到移动端,实现弹幕的全平台覆盖
 
+![](http://ww1.sinaimg.cn/large/9732f922jw1eykdftpfqej20b30lcgnt.jpg) {:&.zoomIn}
+
 [slide]
 ##和搜狗阅读合作
 
@@ -216,14 +217,6 @@ usemathjax: yes
 
 [slide]
 ##*xyz* 无限可能。
-
-
-[slide]
-##优势
-
-*	低成本 {:&.zoomIn}
-*	提供一个开发者和用户自己做主的生态圈
-*	商业模式清晰
 
 
 [slide]
