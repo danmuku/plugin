@@ -94,7 +94,15 @@ usemathjax: yes
 
 <br />
 
-![](http://ww1.sinaimg.cn/large/006ikJG8jw1ey8vnqmq2oj30fb09y779.jpg) {:&.rollIn}
+![](http://ww1.sinaimg.cn/large/9732f922jw1eykhg7c1e1j213y0npam9.jpg) {:&.rollIn}
+
+[slide]
+
+![](http://ww3.sinaimg.cn/large/9732f922jw1eykh59uxeej20p00fntb3.jpg)
+
+[slide]
+
+![](http://ww2.sinaimg.cn/large/9732f922jw1eykhe8raokj20xd0gh4d9.jpg)
 
 [slide data-transition="zoomin"]
 ## 弹幕能干嘛？
@@ -117,7 +125,7 @@ usemathjax: yes
 
 [slide]
 ----
-##弹幕被玩出了其它花样。
+##弹幕的需求量越来越大
 
 [slide]
 
@@ -130,7 +138,7 @@ usemathjax: yes
 
 
 [slide]
-## 弹幕其实还可以玩出更多花样
+## 弹幕其实还可以这样玩！
 
 
 [slide]
@@ -200,7 +208,7 @@ usemathjax: yes
 [slide]
 ##web端功能平移到移动端,实现弹幕的全平台覆盖
 
-![](http://ww1.sinaimg.cn/large/9732f922jw1eykdftpfqej20b30lcgnt.jpg) {:&.zoomIn}
+![知乎弹幕.png](https://ooo.0o0.ooo/2015/12/01/565d9a6be41a7.png) {:&.zoomIn}
 
 [slide]
 ##和搜狗阅读合作
@@ -216,12 +224,5 @@ usemathjax: yes
 此处略去N多商业相关的...
 
 [slide]
-##*xyz* 无限可能。
+##弹幕时代 *xyz* 无限可能。
 
-
-[slide]
-## Q&A
-
-
-[slide]
-## 谢谢大家！
