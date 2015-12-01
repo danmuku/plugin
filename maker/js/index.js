@@ -155,7 +155,7 @@ function previewAndUpload(file) {
             xhr.setRequestHeader("Content-Type", "application/octet-stream");
             xhr.setRequestHeader("Authorization", "UpToken 1OcsILqPu9A_YrO7bgAEBowPWwmjTfzt_zUoINRC:bnJk5GpXzhX78F4TgpzZdbhU6PY=:eyJzY29wZSI6ImRhbm1ha28iLCJkZWFkbGluZSI6MTQ1MTU1MzE1N30=");
             xhr.send(base64);
-            // $('#danmako_container').remove();
+            $('#danmako_container').remove();
         });
 
         $(".loader-wrap").fadeOut("fast");
