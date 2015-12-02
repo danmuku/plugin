@@ -1,7 +1,7 @@
 title: danmuku 演示
 speaker: 杨雄伟
 transition: move
-files: /js/jquery.min.js,/css/demo.css,/js/zoom.js,/js/firebase.js,/js/danmaco.js,/css/danmako.css
+files: /js/jquery.min.js,/js/zoom.js,/js/firebase.js,/js/danmaco.js,/css/danmako.css
 theme: dark
 usemathjax: yes
 
