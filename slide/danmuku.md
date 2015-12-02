@@ -7,9 +7,9 @@ usemathjax: yes
 
 
 [slide]
-# 拯救不吐槽会死星人：弹幕时代
+# 弹幕时代
 ----
-<p style="margin-left:80px">——让弹幕无处不在</p> {:&.moveIn}
+<p style="margin-left:80px">——拯救不吐槽会死星人</p> {:&.moveIn}
 
 <br /><br />
 
@@ -139,10 +139,6 @@ usemathjax: yes
 
 [slide]
 ## 针对日益增长的弹幕需求以及目前弹幕的一些缺陷，我们的产品弹幕时代产生了！
-
-
-[slide]
-## 让我们一起走进弹幕时代！！！
 
 [slide]
 ## 什么是弹幕时代？
