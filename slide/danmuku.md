@@ -9,7 +9,7 @@ usemathjax: yes
 [slide]
 # 弹幕时代
 ----
-<p style="margin-left:80px">——拯救不吐槽会死星人</p> {:&.moveIn}
+<h2 style="margin-left:80px">拯救不吐槽会死星人</h2> {:&.moveIn}
 
 <br /><br />
 
@@ -20,7 +20,7 @@ usemathjax: yes
 
 [slide]
 
-##团队介绍
+#团队介绍
 
 *	六个人 {:&.fadeIn}
 *	90 后 
@@ -29,7 +29,7 @@ usemathjax: yes
 
 [slide]
 
-##黑马感想
+#黑马感想
 
 <br />
 
@@ -41,7 +41,7 @@ usemathjax: yes
 
 [slide]
 
-## 可能是我们最终获奖的原因
+# 可能是我们最终获奖的原因
 
 <br />
 
@@ -86,7 +86,7 @@ usemathjax: yes
 
 [slide data-transition="vertical3d"]
 
-## 弹幕是什么?
+# 弹幕是什么?
 
 <br />
 
@@ -105,7 +105,7 @@ usemathjax: yes
 ![](http://ww2.sinaimg.cn/large/9732f922jw1eykhe8raokj20xd0gh4d9.jpg)
 
 [slide data-transition="zoomin"]
-## 弹幕能干嘛？
+# 弹幕能干嘛？
 ----
 * 吐槽 {:&.rollIn}
 * 看别人吐槽
@@ -114,7 +114,7 @@ usemathjax: yes
 * 主题交流
 
 [slide data-transition="zoomin"]
-## 当前弹幕的缺陷
+# 当前弹幕的缺陷
 
 ----
 * 基本只支持视频 {:&.fadeIn}
@@ -125,7 +125,7 @@ usemathjax: yes
 
 [slide]
 ----
-##弹幕的需求量越来越大
+#弹幕的需求量越来越大
 
 [slide]
 
@@ -138,10 +138,10 @@ usemathjax: yes
 
 
 [slide]
-## 针对日益增长的弹幕需求以及目前弹幕的一些缺陷，我们的产品弹幕时代产生了！
+# 针对日益增长的弹幕需求以及目前弹幕的一些缺陷，我们的产品弹幕时代产生了！
 
 [slide]
-## 什么是弹幕时代？
+#什么是弹幕时代？
 ----
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;——弹幕一站式服务 {:&.moveIn}
 
@@ -155,12 +155,12 @@ usemathjax: yes
 
 
 [slide]
-## Plugin
+# Plugin
 
 浏览器插件，使用它可以在任意一个网站弹幕
 
 [slide]
-## [Maker](http://danmako.sinaapp.com/maker/)
+# [Maker](http://danmako.sinaapp.com/maker/)
 
 弹幕图片生成器
 
@@ -173,7 +173,7 @@ usemathjax: yes
 ![](http://7xofqv.com1.z0.glb.clouddn.com/FjhRQ0yHK6WihqsrZHk2FDZ06z_Q)
 
 [slide]
-## Dev
+# Dev
 
 开发者集成
 
@@ -190,24 +190,24 @@ usemathjax: yes
 开发者也可以根据自己的需求在任何地方任何想要的时机把弹幕弹起来。
 
 [slide]
-##我们要做成弹幕领域的多说，Disqus
+# 我们要做成弹幕领域的多说，Disqus
 
 [slide]
-## Special
+# Special
 可以为活动或者当前主题自定义弹幕
 
 
 [slide]
-## xyz
+# xyz
 将来要做的&对弹幕的一些展望
 
 [slide]
-##web端功能平移到移动端,实现弹幕的全平台覆盖
+#web端功能平移到移动端,实现弹幕的全平台覆盖
 
 ![知乎弹幕.png](https://ooo.0o0.ooo/2015/12/01/565d9a6be41a7.png) {:&.zoomIn}
 
 [slide]
-##和搜狗阅读合作
+#和搜狗阅读合作
 
 ![ebook.png](https://ooo.0o0.ooo/2015/11/21/56508b9a1e652.png)
 
@@ -217,8 +217,8 @@ usemathjax: yes
 
 [slide]
 
-此处略去N多商业相关的...
+#此处略去N多商业相关的...
 
 [slide]
-##弹幕时代 *xyz* 无限可能。
+#弹幕时代 *xyz* 无限可能。
 
