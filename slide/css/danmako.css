@@ -41,16 +41,16 @@
 }
 
 h1{
-    font-size: 3.8em;
+    font-size: 70px;
 }
 
 h2{
-    font-size: 3.2em;
+    font-size: 60px;
 }
 
 p, li, ol{
-    font-size: 2.0em;
-    line-height: 2.0em;
+    font-size: 35px;
+    line-height: 35px;
 }
 
 

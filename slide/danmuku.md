@@ -15,12 +15,15 @@ usemathjax: yes
 
 团队名：小鲜肉 {:&.moveIn}
 
+<br />
 
 演讲者：杨雄伟 {:&.moveIn}
 
 [slide]
 
-#团队介绍
+##团队介绍
+
+<br />
 
 *	六个人 {:&.fadeIn}
 *	90 后 
@@ -29,7 +32,7 @@ usemathjax: yes
 
 [slide]
 
-#黑马感想
+##黑马感想
 
 <br />
 
@@ -41,7 +44,7 @@ usemathjax: yes
 
 [slide]
 
-# 可能是我们最终获奖的原因
+## 可能是我们最终获奖的原因
 
 <br />
 
@@ -86,7 +89,7 @@ usemathjax: yes
 
 [slide data-transition="vertical3d"]
 
-# 弹幕是什么?
+## 弹幕是什么?
 
 <br />
 
@@ -105,8 +108,10 @@ usemathjax: yes
 ![](http://ww2.sinaimg.cn/large/9732f922jw1eykhe8raokj20xd0gh4d9.jpg)
 
 [slide data-transition="zoomin"]
-# 弹幕能干嘛？
-----
+## 弹幕能干嘛？
+
+<br />
+
 * 吐槽 {:&.rollIn}
 * 看别人吐槽
 * 孤独
@@ -114,9 +119,10 @@ usemathjax: yes
 * 主题交流
 
 [slide data-transition="zoomin"]
-# 当前弹幕的缺陷
+## 当前弹幕的缺陷
 
-----
+<br />
+
 * 基本只支持视频 {:&.fadeIn}
 * 弹幕爱好者不能随心所欲地“弹幕”
 * 社交达人不能快速分享弹幕图片
@@ -125,7 +131,7 @@ usemathjax: yes
 
 [slide]
 ----
-#弹幕的需求量越来越大
+## 弹幕的需求量越来越大
 
 [slide]
 
@@ -138,10 +144,11 @@ usemathjax: yes
 
 
 [slide]
-# 针对日益增长的弹幕需求以及目前弹幕的一些缺陷，我们的产品弹幕时代产生了！
+
+## 针对日益增长的弹幕需求以及目前弹幕的一些缺陷，我们的产品弹幕时代产生了！
 
 [slide]
-#什么是弹幕时代？
+## 什么是弹幕时代？
 ----
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;——弹幕一站式服务 {:&.moveIn}
 
@@ -155,12 +162,17 @@ usemathjax: yes
 
 
 [slide]
-# Plugin
+## Plugin
+
+<br />
 
 浏览器插件，使用它可以在任意一个网站弹幕
 
 [slide]
-# [Maker](http://danmako.sinaapp.com/maker/)
+
+<br />
+
+## [Maker](http://danmako.sinaapp.com/maker/)
 
 弹幕图片生成器
 
@@ -173,52 +185,62 @@ usemathjax: yes
 ![](http://7xofqv.com1.z0.glb.clouddn.com/FjhRQ0yHK6WihqsrZHk2FDZ06z_Q)
 
 [slide]
-# Dev
+## Dev
+
+<br />
 
 开发者集成
 
 [slide]
-只需要加一段很简单的js，就可以给自己的网站加上弹幕功能了。
+##只需要加一段很简单的js，就可以给自己的网站加上弹幕功能了。
 
 <br /><br />
 
 `<script src="http://url.com/embed.js"></script>` {:&.zoomIn}
 
 [slide]
-我们提供了一个默认的样式。
+##我们提供了一个默认的样式。
+
+<br />
 
 开发者也可以根据自己的需求在任何地方任何想要的时机把弹幕弹起来。
 
 [slide]
-# 我们要做成弹幕领域的多说，Disqus
+## Dev 的最终形态就是弹幕界的多说，Disqus
 
 [slide]
-# Special
-可以为活动或者当前主题自定义弹幕
+## Special
+
+<br />
+
+为活动或者当前主题自定义弹幕
 
 
 [slide]
-# xyz
+## xyz
+
+<br />
+
 将来要做的&对弹幕的一些展望
 
 [slide]
-#web端功能平移到移动端,实现弹幕的全平台覆盖
+##web端功能平移到移动端,实现弹幕的全平台覆盖
 
 ![知乎弹幕.png](https://ooo.0o0.ooo/2015/12/01/565d9a6be41a7.png) {:&.zoomIn}
 
 [slide]
-#和搜狗阅读合作
+##和搜狗阅读合作
 
 ![ebook.png](https://ooo.0o0.ooo/2015/11/21/56508b9a1e652.png)
 
 [slide]
 
-我们还可以利用大数据平台，对用户的弹幕历史进行分析，比如兴趣爱好、情感、经济状况等。
+## 我们还可以利用大数据平台，对用户的弹幕历史进行分析，比如兴趣爱好、情感、经济状况等。
 
 [slide]
 
-#此处略去N多商业相关的...
+##此处略去N多商业相关的...
 
 [slide]
-#弹幕时代 *xyz* 无限可能。
+##弹幕时代 *xyz* 无限可能。
 
