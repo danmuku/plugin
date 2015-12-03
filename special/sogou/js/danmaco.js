@@ -6,7 +6,7 @@ firebase.on('child_added', function (snapshot) {
     if (message.length > 35) {
         message = message.substr(0, 35) + "...";
     }
-    $(".s_show").append("<div>" + message + "...</div>");
+    $(".s_show").append("<div>" + message + "</div>");
     refresh_screen();
 });
 
