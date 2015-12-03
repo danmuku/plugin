@@ -26,7 +26,7 @@ function refresh_screen() {
     $(".s_show").children("div:last-child").css({
         left: _width,
         top: _top,
-        color: "#fff"
+        color: getRandomColor()
     });
 
     $(".s_show").children("div:last-child").animate({ left: "-" + _width + "px" }, time, function () {
@@ -34,3 +34,9 @@ function refresh_screen() {
     });
 }
 
+//随机获取颜色值
+function getRandomColor() {
+    return '#' + (function (h) {
+        return new Array(7 - h.length).join("0") + h
+    })((Math.random() * 0x1000000 << 0).toString(16))
+}
