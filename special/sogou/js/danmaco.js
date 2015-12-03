@@ -1,5 +1,5 @@
 
-var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/' + 'sogou-hackathon2');
+var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/' + 'sogou-geekpark');
 
 firebase.on('child_added', function (snapshot) {
     var message = snapshot.val();

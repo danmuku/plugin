@@ -57,7 +57,7 @@
      * @return void
      */
     protected function onText() {
-      $firebaseStub = new FirebaseLib("https://dazzling-fire-9662.firebaseio.com/sogou-hackathon2", '');
+      $firebaseStub = new FirebaseLib("https://dazzling-fire-9662.firebaseio.com/sogou-geekpark", '');
       $content = $this->getRequest('content');
       if(strlen($content) > 35){
         $content = mb_substr($content, 0 ,35);
