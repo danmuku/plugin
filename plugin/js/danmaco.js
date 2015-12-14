@@ -8,7 +8,7 @@ var danmacoDiv = $('<div class="danmako_screen"><div class="s_dm"><div class="ma
 
 danmacoDiv.appendTo('body');
 
-// build firebase for the url
+// build wilddog for the url
         
 var urlLocation = location.href;
 
@@ -20,9 +20,9 @@ if (urlLocation.charAt(urlLocation.length - 1) === '/') {
     urlLocation = urlLocation.substr(0, urlLocation.length - 1);
 }
 
-var firebase = new Firebase('https://dazzling-fire-9662.firebaseio.com/' + window.btoa(urlLocation));
+var wilddog = new Wilddog("https://wild-monkey-7055.wilddogio.com/" + window.btoa(urlLocation));
 
-firebase.on('child_added', function (snapshot) {
+wilddog.on('child_added', function (snapshot) {
     var message = snapshot.val();
     if (message.length > 35) {
         message = message.substr(0, 35) + "...";
@@ -70,7 +70,7 @@ function post() {
     var text = $(".s_txt").val();
     if (text) {
         $(".s_txt").val("");
-        firebase.push(text);
+        wilddog.push(text);
     } else {
         $(".s_txt").focus();
     }
